@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Kosher Chrome",
+  "version": "0.1",
+  "icons": {
+    "16": "content/KosherChromeIcon16.png",
+    "48": "content/KosherChromeIcon48.png",
+    "128": "content/KosherChromeIcon128.png"
+  },
+  "background": {
+    "scripts": [ "scripts/libraries/URI.min.js", "scripts/libraries/jquery-3.4.1.min.js", "scripts/kcUtility.js", "scripts/background.js" ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [ "scripts/libraries/jquery-3.4.1.min.js", "scripts/kcUtility.js", "scripts/content.js" ],
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "views/options.html",
+  "browser_action": {
+    "default_icon": "content/KosherChromeIcon48.png"
+  },
+  "permissions": [ "downloads", "tabs", "storage", "webRequest", "webRequestBlocking", "*://*/*" ]
+}

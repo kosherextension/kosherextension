@@ -1,0 +1,31 @@
+textarea {
+    width: 90%;
+    min-width: 280px;
+    min-height: 30px;
+    background: #9999DD;
+}
+
+.collapsible {
+    background-color: #9999DD;
+    color: #444;
+    cursor: pointer;
+    /*padding: 18px;*/
+    /*width: 100%;*/
+    border: solid;
+    text-align: left;
+    outline: none;
+    /*font-size: 15px;*/
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}

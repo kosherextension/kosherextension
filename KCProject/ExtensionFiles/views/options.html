@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="/scripts/libraries/jquery-3.4.1.min.js"></script>
+    <script src="/scripts/options.js"></script>
+    <link rel="stylesheet" href="/stylesheets/options.css">
+
+    <title>Kosher Chrome Extension Options</title>
+</head>
+<body>
+    <input type="button" class="collapsible" value="+" />&nbsp<strong>Important! Setup instructions</strong>
+    <div id="instructions" class="content">
+        <div>
+            Make sure you have enabled the following in the Chome Extension menu (chrome://extensions/?id=kkmloielkjofcnkdanjbgjjhioghcjhn):
+            <ul>
+                <li>Allow this extension... On all sites</li>
+                <li>Allow incogneto</li>
+                <li>Allow access to file URLs</li>
+            </ul>
+        </div>
+        <div>
+            Instructions for adding to registry
+        </div>
+        <div>
+            Make users non-admins
+        </div>
+        <div>
+            Suggestions:
+            <ul>
+                <li>Qustodio or other monitoring softoware to block other browsers and unsafe programs/apps</li>
+                <li>TubeBlock extension to whitelist safe channels</li>
+                <li>AdBlock extension to prevent undesirable ads on otherwise trusted sites</li>
+                <li>vRate extension to prevent unsafe images on otherwise trusted sites</li>
+            </ul>
+        </div>
+        <div id="examples">
+            <ul>
+                <li>Example URLS/Keywords:</li>
+                <li>www.aish.com (trust aish.com and all URLs included, e.g. aish.com/tp, aish.com/somethingelse/anotherthing</li>
+                <li>www.aish.com/tp (only trust this section of aish.com</li>
+                <li>aish.com (trust all sub-domains of aish.com, e.g. www.aish.com, somethingelse.aish.com/anotherthing</li>
+            </ul>
+        </div>
+    </div>
+    <br /><br />
+
+    <input type="button" class="collapsible" value="+" />&nbsp<strong>General Settings</strong>
+    <div id="settings" class="content">
+        <strong>Settings</strong><br />
+        <input type="checkbox" name="blockSettings" /> Password-protect Chrome settings<br />
+    </div>
+    <br /><br />
+
+    <input type="button" class="collapsible" value="+" />&nbsp<strong>Set password</strong>
+    <div id="password" class="content">
+        Old password: <input type="text" id="oldPassword" /><br />
+        New password: <input type="text" id="newPassword" /><br />
+        Repeat new password: <input type="text" id="newPasswordRepeat" /><br />
+        <input type="button" id="savePassword" value="Save Password" />
+    </div>
+    <br /><br />
+
+    <div id="blackList">
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Block Sites/Keywords</strong>
+        <div id="blackListBlock" class="content">
+            <textarea id="block"></textarea>
+        </div>
+        <br /><br />
+    </div>
+
+    <div id="whiteList">
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Completely Trusted Sites/Keywords</strong>
+        <div id="whiteListCompletelyTrust" class="content">
+            <textarea id="completelyTrust"></textarea>
+        </div>
+        <br /><br />
+
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Trusted Sites/Keywords for Images</strong>
+        <div id="whiteListImages" class="content">
+            <textarea id="imagesTrust"></textarea>
+        </div>
+        <br /><br />
+
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Trusted Sites/Keywords for Videos</strong>
+        <div id="whiteListVideos" class="content">
+            <textarea id="videosTrust"></textarea>
+        </div>
+        <br /><br />
+
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Trusted Sites/Keywords for IFrames</strong>
+        <div id="whiteListIFrames" class="content">
+            <textarea id="iframesTrust"></textarea>
+        </div>
+        <br /><br />
+
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Trusted Source Sies/Keywords for Downloads</strong>
+        <div id="whiteLisiDownloads" class="content">
+            <textarea id="downloadsTrust"></textarea>
+        </div>
+        <br /><br />
+
+        <input type="button" class="collapsible" value="+" />&nbsp<strong>Always Truest File Types:</strong>
+        <div id="whiteListFileTypes" class="content">
+            <strong>Document</strong><br />
+            <input type="checkbox" name="trustedFiles" value="application/pdf" /> .pdf (Adobe PDF)<br />
+            <input type="checkbox" name="trustedFiles" value="application/msword" /> .doc (Microsoft Word)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.openxmlformats-officedocument.wordprocessingml.document" /> .docx (Microsoft Word (OpenXML))<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.ms-excel" /> .xls (Microsoft Excel)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" /> .xlsx (Microsoft Excel (OpenXML))<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.ms-powerpoint" /> .ppt (Microsoft PowerPoint)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.openxmlformats-officedocument.presentationml.presentation" /> .pptx (Microsoft PowerPoint (OpenXML))<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.oasis.opendocument.presentation" /> .odp (OpenDocument presentation document)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.oasis.opendocument.spreadsheet" /> .ods (OpenDocument spreadsheet document)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.oasis.opendocument.text" /> .odt (OpenDocument text document)<br />
+            <input type="checkbox" name="trustedFiles" value="text/plain" /> .txt (plain text)<br />
+            <input type="checkbox" name="trustedFiles" value="application/rtf" /> .rtf (Rich Text Format (RTF))<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.visio" /> .vsd (Microsoft Visio)<br />
+            <input type="checkbox" name="trustedFiles" value="application/vnd.amazon.ebook" /> .azw (Amazon Kindle eBook format)<br />
+            <br />
+            <strong>Archive</strong><br />
+            <input type="checkbox" name="trustedFiles" value="application/x-rar-compressed" /> .rar (RAR archive)<br />
+            <input type="checkbox" name="trustedFiles" value="application/zip" /> .zip (ZIP archive)<br />
+            <input type="checkbox" name="trustedFiles" value="application/x-7z-compressed" /> .7z (7-zip archive)<br />
+            <br />
+            <strong>Music/Audio</strong><br />
+            <input type="checkbox" name="trustedFiles" value="audio/mpeg" /> .mp3 (MP3 audio)<br />
+            <input type="checkbox" name="trustedFiles" value="audio/wav" /> .wav (Waveform Audio Formatt)<br />
+            <input type="checkbox" name="trustedFiles" value="audio/aac" /> .aac (AAC audio)<br />
+            <input type="checkbox" name="trustedFiles" value="audio/ogg" /> .oga (OGG audio)<br />
+            <br />
+            <strong>Image</strong><br />
+            <input type="checkbox" name="trustedFiles" value="image/jpeg" /> .jpg (JPEG images)<br />
+            <input type="checkbox" name="trustedFiles" value="image/bmp" /> .bmp (Windows OS/2 Bitmap Graphics)<br />
+            <input type="checkbox" name="trustedFiles" value="image/gif" /> .gif (Graphics Interchange Format (GIF))<br />
+            <input type="checkbox" name="trustedFiles" value="image/png" /> .png (Portable Network Graphics)<br />
+            <br />
+            <strong>Video</strong><br />
+            <input type="checkbox" name="trustedFiles" value="video/mp4" /> .mp4 (MPEG-4)<br />
+            <input type="checkbox" name="trustedFiles" value="video/mpeg" /> .mpeg (MPEG Video)<br />
+            <input type="checkbox" name="trustedFiles" value="video/x-msvideo" /> .avi (AVI: Audio Video Interleave)<br />
+            <input type="checkbox" name="trustedFiles" value="video/x-flv" /> .flv (Flash)<br />
+            <input type="checkbox" name="trustedFiles" value="video/ogg" /> .ogv (OGG video)<br />
+            <br />
+            <strong>Technical</strong><br />
+            <input type="checkbox" name="trustedFiles" value="text/javascript" /> .js (JavaScript)<br />
+            <input type="checkbox" name="trustedFiles" value="application/json" /> .json (JSON format)<br />
+            <input type="checkbox" name="trustedFiles" value="application/php" /> .php (PHP)<br />
+            <input type="checkbox" name="trustedFiles" value="text/html" /> .html (HyperText Markup Language (HTML))<br />
+            <input type="checkbox" name="trustedFiles" value="application/xhtml+xml" /> .xhtml (XHTML)<br />
+            <input type="checkbox" name="trustedFiles" value="application/xml" /> .xml (XML)<br />
+            <br />
+        </div>
+    </div>
+
+    <br />
+    <div id="status"></div>
+    <button id="save">Save</button>
+    <br />
+
+</body>
+</html>
